@@ -18,6 +18,7 @@ defmodule BloodPressureBoardWeb.Router do
     pipe_through :browser
 
     get "/", BloodPressureController, :home
+    get "/bp_stats", BloodPressureController, :index
   end
 
   # Other scopes may use custom stacks.

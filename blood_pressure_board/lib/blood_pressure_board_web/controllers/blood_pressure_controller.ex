@@ -6,4 +6,10 @@ defmodule BloodPressureBoardWeb.BloodPressureController do
         # so skip the default app layout
         render(conn, :home, layout: false)
     end
+
+    def index(conn, _params) do
+        blood_pressures = BloodPressureBoard.BloodPressure.list_blood_pressures()
+        render(conn, "index.html", blood_pressures: blood_pressures)
+    end
+
 end
